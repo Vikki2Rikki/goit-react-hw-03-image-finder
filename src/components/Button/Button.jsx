@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Btn } from './Button.styled';
 
+import React from 'react';
+
 class Button extends Component {
   state = {};
 

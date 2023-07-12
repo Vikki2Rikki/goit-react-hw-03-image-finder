@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import { Item, ImgItem } from './ImageGalleryItem.styled';
 
-export const ImageGalleryItem = props => {
-  const { imageId, webformatURL, tags } = props;
-  // console.log(props);
-
+export const ImageGalleryItem = ({
+  imageId,
+  webformatURL,
+  tags,
+  onOpenModal,
+}) => {
   const handleOpenModal = () => {
-    props.onOpenModal(imageId);
+    onOpenModal(imageId);
   };
 
   return (

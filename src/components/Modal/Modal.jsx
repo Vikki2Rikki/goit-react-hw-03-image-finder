@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { Overlay, ModalBlock } from './Modal.styled';
 
-// const modalRoot = document.querySelector('#modal-root');
-
 class Modal extends Component {
   state = {
     // isShowModal: false,
@@ -12,6 +10,7 @@ class Modal extends Component {
   handleEsc = ({ code }) => {
     if (code === 'Escape') this.props.onCloseModal();
   };
+
   componentDidMount() {
     document.addEventListener('keydown', this.handleEsc);
   }
@@ -20,8 +19,8 @@ class Modal extends Component {
     document.removeEventListener('keydown', this.handleEsc);
   }
 
-  onClose = () => {
-    this.props.onCloseModal();
+  onClose = evt => {
+    evt.currentTarget === evt.target && this.props.onCloseModal();
   };
 
   render() {
